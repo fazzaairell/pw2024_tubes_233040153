@@ -1,9 +1,17 @@
+<?php
+  include('functions.php'); //agar index terhubung dengan database, maka koneksi sebagai penghubung harus di include
+  
+?>
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Traveling</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- my style -->
     <link rel="stylesheet" href="style.css">
@@ -13,40 +21,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-light sticky-top">
-  <div class="container mx-5">
-    <a class="navbar-brand" href="#">Traveling<span>Yuk</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item mx-2">
-          <a class="nav-link" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="#">Hotels</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="#">Destination</a>
-        </li>
-      </ul>
-      <div class="btn my-2">
-      <a href="login.php" id=""><i data-feather="user"></i></a>
-      <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
-
-      </div>
+    <nav class="navbar navbar-expand-lg bg-transparent sticky-top position-absolute w-100">
+      <div class="container">
+        <a class="navbar-brand" href="#">Traveling<span>Yuk</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item mx-2">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#fitur">Hotels</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Destination</a>
+          </li>
+        <!-- tambah li dan kondisi jika dia admin maka dia ditampilkan dan jika dia user maka akan di hide -->
+        </ul>
+        <form class=" form d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+        <div class="btn my-2">
+            <a href="login.php" id=""><i data-feather="user"></i></a>
+        </div>
+        <div class="btn-logout">
+            <a href="logout.php"><i data-feather="log-out"></i></a>
+        </div>
     </div>
   </div>
 </nav>
 <!-- hero section -->
 <section class="hero" id="home">
-        <main class="content">
-            <h1>Mau Kemana <span>Hari Ini</span></h1>
-            <a href="#" class="cta">Chek in</a>
+        <main class="content"data-aos="fade-right">>
+            <h1>Mau Kemana <br>
+            <span>Hari Ini</span></h1>
+            <a href="pesan.php" class="cta">Chek in</a>
         </main>
  <!-- fitur hotel -->
 </section>
@@ -54,88 +72,72 @@
   <div class="container">
     <div class="row mb-4">
       <div class="col-9">
-        <h1>Destination</h1>
+        <h1 data-aos="zoom-out-up">Destination</h1>
       </div>
-      <div class="col-3">
+      <div class="col-3" data-aos="zoom-out-up">
         <button class="button-fitur">See all..
           <a href=""></a>
         </button>
       </div>
     </div>
+    <?php
+      // jalankan query untuk menampilkan semua data diurutkan berdasarkan nim
+      $query = "SELECT * FROM hotel ORDER BY id ASC";
+      $result = mysqli_query($koneksi, $query);
+      //mengecek apakah ada error ketika menjalankan query
+      if(!$result){
+        die ("Query Error: ".mysqli_errno($koneksi).
+           " - ".mysqli_error($koneksi));
+      }
 
-    <div class="container position-relative">
+      //buat perulangan untuk element tabel dari data mahasiswa
+      $no = 1; //variabel untuk membuat nomor urut
+      // hasil query akan disimpan dalam variabel $data dalam bentuk array
+      // kemudian dicetak dengan perulangan while
+      while($row = mysqli_fetch_assoc($result))
+      {
+      ?>
+    <div class="container position-relative" data-aos="zoom-out-up">
       <div class="row">
         <div class="col-12 d-flex justify-content-start">
           <div class="card-fitur me-4 position-relative">
-            <img src="img/sebastian-pena-lambarri-U_i6h9Y50wQ-unsplash.jpg" alt="">
+            <img src="img/<?php echo $row['gambar_hotel']; ?>" alt="">
             <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
               <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
                 <h5>
-                  Kamar Tidur
+                <?php echo $row['nama_hotel']; ?>
                 </h5>
-                <span>Hotel Bali</span>
-                <h6>IDR.500JT/Permalam</h6>
-                <button>Lihat Kamar</button>
+                <!-- <span>hotel</span> -->
+                <h6><?php echo substr($row['harga_hotel'], 0, 20); ?></h6>
+                <button type="submit"><a href="pesan.php?id=<?php echo $row['id']; ?>" class="text-decoration-none text-light">Pesan</a></button>
               </div>
             </div>
           </div>
-          <div class="card-fitur me-4 position-relative">
-            <img src="img/sebastian-pena-lambarri-U_i6h9Y50wQ-unsplash.jpg" alt="">
-            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
-              <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
-                <h5>
-                  Kamar Tidur
-                </h5>
-                <span>Hotel Bali</span>
-                <h6>IDR.500JT/Permalam</h6>
-                <button>Lihat Kamar</button>
-              </div>
-            </div>
-          </div>
-          <div class="card-fitur me-4 position-relative">
-            <img src="img/sebastian-pena-lambarri-U_i6h9Y50wQ-unsplash.jpg" alt="">
-            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
-              <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
-                <h5>
-                  Kamar Tidur
-                </h5>
-                <span>Hotel Bali</span>
-                <h6>IDR.500JT/Permalam</h6>
-                <button>Lihat Kamar</button>
-              </div>
-            </div>
-          </div>
-          <div class="card-fitur me-4 position-relative">
-            <img src="img/sebastian-pena-lambarri-U_i6h9Y50wQ-unsplash.jpg" alt="">
-            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
-              <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
-                <h5>
-                  Kamar Tidur
-                </h5>
-                <span>Hotel Bali</span>
-                <h6>IDR.500JT/Permalam</h6>
-                <button>Lihat Kamar</button>
-              </div>
-            </div>
-          </div>
- 
+          <?php 
+            $no++;
+          }
+          ?>
         </div>
       </div>
       <button class="button-arrow-left position-absolute start-0 top-50 translate-middle-y">
-      <i data-feather="chevron-left"></i>
-    </button>
-    <button class="button-arrow-right position-absolute end-0 top-50 translate-middle-y">
-      <i data-feather="chevron-right"></i>
-    </button>
+        <i data-feather="chevron-left"></i>
+      </button>
+      <button class="button-arrow-right position-absolute end-0 top-50 translate-middle-y">
+        <i data-feather="chevron-right"></i>
+      </button>
     </div>
   </div>
 </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- icons -->
         <!-- icons -->
         <script>
       feather.replace();
     </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+  AOS.init();
+</script>
   </body>
 </html>

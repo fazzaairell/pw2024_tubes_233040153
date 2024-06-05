@@ -7,19 +7,28 @@ body {
 
 }
 
+
 .navbar-brand {
   font-weight: 700;
   font-size: 25px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
+  color: var(--bg);
+}
+.navbar-brand span {
   color: var(--primary);
+  text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black, 
+  -1px 1px 0 black, 
+  1px 1px 0 black;
 }
 .nav-link {
   font-size: 20px;
 
 }
 .nav-link:hover {
-  color: var(--primary);
-  border-bottom: 0.1rem solid var(--primary)
+  color: var(--bg);
+  border-bottom: 0.1rem solid var(--bg)
 }
 .nav-link .active {
   font-weight: 500;
@@ -28,21 +37,25 @@ body {
   color: var(--primary);
 }
 .btn a:hover {
-  color: black;
+  color: green;
+}
+.form .form-control {
+  background-color:  rgba(255, 255, 255, .2);
+  
 }
 /* hero */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("../Treveling/img/tom-winckels-I7oLRdM9YIw-unsplash.jpg");
+  background-image: url("../Treveling/img/fifani-cahyadi-R78_-Kxsa7o-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
   font-family: 'poppins', sans-serif;
   font-weight: 600;
-  margin-top: -2rem;
+  /* justify-content: center; */
 
 }
 .hero::after {
@@ -61,6 +74,7 @@ body {
 .hero .content {
   padding: 1.4rem 7%;
   max-width: 60rem;
+  /* text-align: center; */
 }
 .hero .content h1 {
   font-size: 5em;
@@ -108,6 +122,7 @@ body {
   color: #ffffff;
   border-radius: 10px;
 }
+
 #fitur h2 {
   font-size: 48px;
   font-weight: 500;
@@ -156,13 +171,4 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   opacity: 1;
   border-radius: 10px;
-}
-.button-arrow-right,
-.button-arrow-left {
-  border: none;
-  border-radius: 50%;
-  width: 51px;
-  height: 51px;
-  background-color: var(--primary);
-  color: #ffffff;
 }

@@ -1,0 +1,113 @@
+*{
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+body {
+background-color: #fff;
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  background-color: #258ad8;
+  width: 260px;
+  padding: 25px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  transition: all ease-in .3s;
+  backdrop-filter: blur(3px);
+
+  
+}
+.sidebar.hide {
+  width: 87px;
+  transition: all ease-out .3s;
+
+}
+.main-content {
+  flex-grow: 1;
+
+}
+.sidebar .description-header {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color:#258ad8;
+}
+.sidebar a {
+  text-decoration: none;
+}
+.sidebar .header .list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 8px;
+  padding: 12px 10px;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.sidebar .header .list-item i {
+  margin-right: 7px;
+  font-size: 25px;
+}
+.sidebar .header .ilustration {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  box-sizing: border-box;
+  /* font-size: 50px; */
+  align-items: center;
+}
+.sidebar .main .list-item .description{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #fff;
+}
+.sidebar .main .list-item i {
+  margin: 12px;
+}
+.sidebar .main .list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12x 10px;
+  border-radius: 8px;
+  width: 212px;
+  box-sizing: border-box;
+  transition: all ease .2s;
+}
+.sidebar .main .list-item .description-header {
+  color: #fff;
+}
+.sidebar .main .list-item:hover {
+  background: black;
+}
+.about-img{
+  display: flex;
+  justify-content: center;
+}
+.about-img img {
+  border-radius: 50%;
+  width: 200px;
+  /* padding-top: 50px; */
+  /* padding-bottom: 50px; */
+  border: 5px solid #258ad8;
+  /* box-shadow: 0 0 30px rgb(255, 0, 0);   */
+  margin-top: 50px;  
+}
+.main-content h1 {
+  text-align: center;
+  padding: 5px 0 0 0;
+  color: #258ad8;
+}

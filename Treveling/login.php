@@ -1,4 +1,25 @@
+<?php 
+require 'functions.php';
 
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $login_result = in($_POST);
+    if ($login_result['error']) {
+        echo $login_result['pesan'];
+    }
+}
+
+if (isset($_SESSION['in'])) {
+  header("Location: index.php");
+  exit;
+}
+
+// ketika tombol  login di tekan
+if (isset($_POST['in'])) {
+  $in = in($_POST);
+}
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,14 +33,17 @@
   </head>
   <body>
     <div class="wrapper">
-      <form action="">
+      <?php if(isset($in['error'])) : ?>
+        <p style="color: red; font-style:italic;"><?= $in['pesan']; ?></p>
+      <?php endif; ?>
+      <form action="" method="POST">
         <h1>Login</h1>
         <div class="input-box">
-          <input type="text" placeholder="username" required>
+          <input type="text" placeholder="username" name="username" required>
           <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="password" required>
+          <input type="password" placeholder="password" name="password" required>
           <i class='bx bxs-lock-alt' ></i>
         </div>
         <div class="remember-forgot">
@@ -27,7 +51,7 @@
           <a href="#">Forgot Password?</a>
         </div>
 
-        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn" name="in" >Login</button>
 
         <div class="register-link">
           <p>Don't have an account?<a href="register.php">Register</a></p>

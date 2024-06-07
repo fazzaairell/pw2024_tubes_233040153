@@ -66,9 +66,9 @@ if(!isset($_SESSION['in'])) {
     </div>
   </div>
   <div class="col-md-8 position-relative pt-3 mx-auto">
-    <label for="validationTooltipUsername" class="form-label">Username</label>
+    <label for="validationTooltipUsername" class="form-label">No.Hp</label>
     <div class="input-group has-validation">
-      <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+      <span class="input-group-text" id="validationTooltipUsernamePrepend">+62</span>
       <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
       <div class="invalid-tooltip">
         Please choose a unique and valid username.

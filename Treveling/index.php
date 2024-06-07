@@ -22,6 +22,7 @@
     <!-- icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
 
 
   </head>
@@ -63,11 +64,11 @@
 <section class="hero" id="home">
         <main class="content"data-aos="fade-right">>
             <h1>Mau Kemana <br>
-            <span>Hari Ini</span></h1>
+            <span>Hari Ini?</span></h1>
             <a href="pesan.php" class="cta">Chek in</a>
         </main>
- <!-- fitur hotel -->
 </section>
+ <!-- fitur hotel -->
 <section id="fitur" class="mt-5 overflow-hidden">
   <div class="container">
     <div class="row mb-4">
@@ -107,7 +108,6 @@
                 <h5>
                 <?php echo $row['nama_hotel']; ?>
                 </h5>
-                <!-- <span>hotel</span> -->
                 <h6><?php echo substr($row['harga_hotel'], 0, 20); ?></h6>
                 <button type="submit"><a href="pesan.php?id=<?php echo $row['id']; ?>" class="text-decoration-none text-light">Pesan</a></button>
               </div>
@@ -119,11 +119,11 @@
           ?>
         </div>
       </div>
-      <button class="button-arrow-left position-absolute start-0 top-50 translate-middle-y">
-        <i data-feather="chevron-left"></i>
-      </button>
-      <button class="button-arrow-right position-absolute end-0 top-50 translate-middle-y">
-        <i data-feather="chevron-right"></i>
+      <button class="button-arrow-left" onclick="changeSlide(-1)">
+                <i data-feather="chevron-left"></i>
+       </button>
+       <button class="button-arrow-right" onclick="changeSlide(1)">
+                <i data-feather="chevron-right"></i>
       </button>
     </div>
   </div>
@@ -139,5 +139,6 @@
     <script>
   AOS.init();
 </script>
+<script></script>
   </body>
 </html>

@@ -4,7 +4,7 @@ $id = $_GET["id"];
 //mengambil id yang ingin dihapus
 
     //jalankan query DELETE untuk menghapus data
-    $query = "DELETE FROM akun WHERE id='$id' ";
+    $query = "DELETE FROM hotel WHERE id='$id' ";
     $hasil_query = mysqli_query($koneksi, $query);
 
     //periksa query, apakah ada kesalahan

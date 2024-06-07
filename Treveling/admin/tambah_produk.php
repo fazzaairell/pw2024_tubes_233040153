@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CRUD Produk dengan gambar - Gilacoding</title>
+    <title>Tambah Produk</title>
     <style type="text/css">
       :root {
        --primary: #258ad8;

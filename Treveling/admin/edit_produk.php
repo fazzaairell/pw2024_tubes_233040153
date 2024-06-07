@@ -29,17 +29,17 @@ include 'koneksi.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CRUD Produk dengan gambar - Gilacoding</title>
+    <title></title>
     <style type="text/css">
       * {
-        font-family: "Trebuchet MS";
+        font-family: 'poppins', sans-serif;
       }
       h1 {
         text-transform: uppercase;
-        color: salmon;
+        color: #258ad8;;
       }
     button {
-          background-color: salmon;
+          background-color: #258ad8;;
           color: #fff;
           padding: 10px;
           text-decoration: none;
@@ -59,7 +59,7 @@ include 'koneksi.php';
       box-sizing: border-box;
       background: #f8f8f8;
       border: 2px solid #ccc;
-      outline-color: salmon;
+      outline-color: #258ad8;;
     }
     div {
       width: 100%;
@@ -77,24 +77,24 @@ include 'koneksi.php';
   </head>
   <body>
       <center>
-        <h1>Edit Produk <?php echo $data['nama_hotel']; ?></h1>
+        <h1>Edit <?php echo $data['nama_hotel']; ?></h1>
       <center>
       <form method="POST" action="proses_edit.php" enctype="multipart/form-data" >
       <section class="base">
         <!-- menampung nilai id produk yang akan di edit -->
         <input name="id" value="<?php echo $data['id']; ?>"  hidden />
         <div>
-          <label>Nama Hotel</label>
+          <label>Nama Produk</label>
           <input type="text" name="nama_hotel" value="<?php echo $data['nama_hotel']; ?>" autofocus="" required="" />
         </div>
         <div>
-          <label>Harga Hotel</label>
-         <input type="text" name="harga_hotel" required="" value="<?php echo $data['harga_hotel']; ?>"/>
+          <label>Harga Beli</label>
+         <input type="text" name="harga_hotel" required=""value="<?php echo $data['harga_hotel']; ?>" />
         </div>
         <div>
-          <label>Gambar Hotel</label>
+          <label>Gambar Produk</label>
           <img src="image/<?php echo $data['gambar_hotel']; ?>" style="width: 120px;float: left;margin-bottom: 5px;">
-          <input type="file" name="gambar_produk" />
+          <input type="file" name="gambar_hotel" />
           <i style="float: left;font-size: 11px;color: red">Abaikan jika tidak merubah gambar produk</i>
         </div>
         <div>

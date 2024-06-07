@@ -19,7 +19,7 @@ include 'koneksi.php';
                   move_uploaded_file($file_tmp, 'image/'.$nama_gambar_baru); //memindah file gambar ke folder gambar
                       
                     // jalankan query UPDATE berdasarkan ID yang produknya kita edit
-                   $query  = "UPDATE hotel SET nama_hotel = '$nama_hotel', harga_hotel = '$harga_hotel, gambar_hotel = '$nama_gambar_baru'";
+                   $query  = "UPDATE hotel SET nama_hotel = '$nama_hotel', harga_hotel = '$harga_hotel', gambar_hotel = '$nama_gambar_baru'";
                     $query .= "WHERE id = '$id'";
                     $result = mysqli_query($koneksi, $query);
                     // periska query apakah ada error

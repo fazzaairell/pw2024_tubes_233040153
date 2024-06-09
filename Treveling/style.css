@@ -247,18 +247,15 @@ body {
   font-weight: 13px;
   border-right: 10px;
   border-radius: 10px;
-  transition: background 0.5s, transform 0.5s;
-  box-shadow: 1px 1px 20px rgb(231, 226, 233),
+   box-shadow: 1px 1px 20px rgb(231, 226, 233),
               1px 1px 40px rgb(247, 244, 247); 
 
 }
 
 
-.services-list div i {
-  font-size: 50px;
-  margin-bottom: 15px; 
-  font-weight: 500;
-  padding-bottom: 10px;
+
+.services-list .kotak i {
+  margin-bottom: 5rem;
 }
 .services-list div a {
   text-decoration: none;

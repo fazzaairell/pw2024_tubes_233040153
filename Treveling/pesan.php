@@ -83,7 +83,7 @@ if(!isset($_SESSION['in'])) {
     </div>
   <div class="mt-3 p-3">
     <button class="btn btn-danger" type="submit"><a href="index.php" class="color-light">back</a></button>
-    <button class="btn btn-primary " type="submit">pesan</button>
+    <button class="btn btn-primary " type="submit" name="pesan" onclick="return confirm('apakah anda yakin untuk memesan kamar ini!');">pesan</button>
   </div>
 </form>
 </div>

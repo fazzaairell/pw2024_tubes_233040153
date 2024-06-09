@@ -130,7 +130,7 @@
                 <p>Apa saja sih layanan yg bisa kalian nikmati</p>
              <div class="services-list">
                 <div data-aos="fade-up"  class="kotak">
-                <i data-feather="log-out"></i>
+                <i data-feather="fast-forward"></i>
                     <h2>Cepat No Ribet</h2>
                     <p>Memanfaatkan layanan pesan antar dari toko cat sampai ke rumah</p>
                  </div>
@@ -151,7 +151,7 @@
            </div>
             <div data-aos="fade-up">
             <i data-feather="users"></i>
-                <h2>Membership</h2>
+                <h2>Members</h2>
                 <p>Berlangganan lah dengan kami</p>
            </div>
             <div data-aos="fade-up">

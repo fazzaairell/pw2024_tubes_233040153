@@ -1,3 +1,13 @@
+<?php 
+require 'functions.php';
+session_start();
+
+if (!isset($_SESSION['masuk'])) {
+  header("Location: login_admin.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,12 +51,13 @@
         </a>
       </div>
       <div class="list-item">
-        <a href="#">          
-          <i class='bx bxs-dashboard'></i>
-          <span class="description-header">Dashbord</span>
+        <a href="admin/user.php">          
+          <i class='bx bxs-user'></i>
+          <span class="description-header">Data user</span>
         </a>
       </div>
     </div>
+    <button class="btn btn-danger" type="submit"><a href="logout_admin.php" class="color-light">Log Out</a></button>
   </div>
   <div class="main-content">
         <div class="about-img">

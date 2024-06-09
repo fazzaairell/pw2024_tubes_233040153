@@ -111,6 +111,27 @@ function registrasi($data)
             return mysqli_affected_rows($conn);
 }
 
+function masuk($data)
+{
+    $conn = koneksi();
+
+    $user = htmlspecialchars($data['user']);
+    $pass = htmlspecialchars($data['pass']);
+
+    // session
+    $_SESSION['masuk'] = true;
+
+    if($user == 'airell' && $pass == '123456') {
+        header("Location: admin.php");
+        exit;
+    } else {
+        return [
+            'error' => true,
+            'pesan' => 'ussername / password salah!'
+        ];
+    }
+}
+
 
 
 

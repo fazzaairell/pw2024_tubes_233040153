@@ -1,7 +1,7 @@
 let slideIndex = 0;
 
 function showSlides(index) {
-    let slides = document.getElementsByClassName("slides");
+    let slides = document.getElementsByClassName("card-fitur");
     if (index >= slides.length) {
         slideIndex = 0;
     }

@@ -36,7 +36,7 @@ if($gambar_hotel != "") {
                 echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='tambah_produk.php';</script>";
             }
 } else {
-   $query = "INSERT INTO hotel (nama_hotel, harga_hotel, gambar_hotel) VALUES ('$nama_produk','$harga_hotel', null)";
+   $query = "INSERT INTO hotel (nama_hotel, harga_hotel, gambar_hotel) VALUES (null,'$nama_produk','$harga_hotel')";
                   $result = mysqli_query($koneksi, $query);
                   // periska query apakah ada error
                   if(!$result){

@@ -22,6 +22,7 @@
     <!-- icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     
 
 
@@ -43,7 +44,7 @@
             <a class="nav-link" href="#fitur">Hotels</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Destination</a>
+            <a class="nav-link" href="#Layanan">Layanan</a>
           </li>
         <!-- tambah li dan kondisi jika dia admin maka dia ditampilkan dan jika dia user maka akan di hide -->
         </ul>
@@ -68,7 +69,7 @@
             <a href="pesan.php" class="cta">Chek in</a>
         </main>
 </section>
- <!-- fitur hotel -->
+<!-- fitur hotel -->
 <section id="fitur" class="mt-5 overflow-hidden">
   <div class="container">
     <div class="row mb-4">
@@ -119,14 +120,48 @@
           ?>
         </div>
       </div>
-      <button class="button-arrow-left" onclick="changeSlide(-1)">
-                <i data-feather="chevron-left"></i>
-       </button>
-       <button class="button-arrow-right" onclick="changeSlide(1)">
-                <i data-feather="chevron-right"></i>
-      </button>
     </div>
   </div>
+</section>
+<section>
+        <div class="services mt-4" id="Layanan" >
+            <div class="container" data-aos="fade-up">
+                <h1 class="sub-tittle">LAYANAN</h1>
+                <p>Apa saja sih layanan yg bisa kalian nikmati</p>
+             <div class="services-list">
+                <div data-aos="fade-up"  class="kotak">
+                <i data-feather="log-out"></i>
+                    <h2>Cepat No Ribet</h2>
+                    <p>Memanfaatkan layanan pesan antar dari toko cat sampai ke rumah</p>
+                 </div>
+            <div data-aos="fade-up" class="kotak">
+            <i data-feather="dollar-sign"></i>
+                <h2>Jaminan Harga</h2>
+                <p>Toko lain lebih murah? <br>selisih harga lebih dengan toko lain kami kembalikan</p>
+            </div>
+            <div data-aos="fade-up">
+            <i data-feather="credit-card"></i>
+                <h2>Cashback</h2>
+                <p><br>kami menerima penukaran atau pengembalian uang jika sudah di chekin</p>
+           </div>
+            <div data-aos="fade-up">
+                <i data-feather="clock"></i>
+                <h2>Siap Melayani 24 jam</h2>
+                <p>Custumor service kami siap melayani anda dengan ramah</p>
+           </div>
+            <div data-aos="fade-up">
+            <i data-feather="users"></i>
+                <h2>Membership</h2>
+                <p>Berlangganan lah dengan kami</p>
+           </div>
+            <div data-aos="fade-up">
+            <i class='bx bxs-plane-alt'></i>
+                <h2>Destination Yang menarik</h2>
+                <p>Banyak sekali destinasi yang menarik <br>cocok untuk destinasi liburan anda</p>
+           </div>
+         </div> 
+       </div>
+       </div>  
 </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
@@ -135,6 +170,8 @@
       feather.replace();
     </script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 
     <script>
   AOS.init();

@@ -9,9 +9,12 @@ background-color: #fff;
 .container {
   display: flex;
   min-height: 100vh;
+  background-image: url(../Treveling/img/james-graham-IK32qvCAYy8-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .sidebar {
-  background-color: #258ad8;
+  background-color: rgba(0, 0, 0, 0.3);
   width: 260px;
   padding: 25px;
   display: flex;
@@ -30,6 +33,7 @@ background-color: #fff;
 .main-content {
   flex-grow: 1;
 
+
 }
 .sidebar .description-header {
   font-style: normal;
@@ -37,7 +41,7 @@ background-color: #fff;
   font-size: 16px;
   line-height: 16px;
   text-align: center;
-  color:#258ad8;
+  color:#d8259f;
 }
 .sidebar a {
   text-decoration: none;
@@ -55,6 +59,7 @@ background-color: #fff;
 .sidebar .header .list-item i {
   margin-right: 7px;
   font-size: 25px;
+  color: black;
 }
 .sidebar .header .ilustration {
   display: flex;
@@ -76,6 +81,7 @@ background-color: #fff;
 }
 .sidebar .main .list-item i {
   margin: 12px;
+  color: #fff;
 }
 .sidebar .main .list-item {
   display: flex;
@@ -102,12 +108,33 @@ background-color: #fff;
   width: 200px;
   /* padding-top: 50px; */
   /* padding-bottom: 50px; */
-  border: 5px solid #258ad8;
-  /* box-shadow: 0 0 30px rgb(255, 0, 0);   */
+  border: 2px solid #5b1c47;
+  box-shadow: 0 0 30px #691e66;  
   margin-top: 50px;  
 }
 .main-content h1 {
   text-align: center;
   padding: 5px 0 0 0;
-  color: #258ad8;
+  color: #691e66;
+  text-shadow:
+  -1px -1px 0 #fff,
+  1px -1px 0 #fff, 
+  -1px 1px 0 #fff, 
+  1px 1px 0 #fff;
+}
+.btn {
+  background-color: red;
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 10rem;
+  height: 40px;
+  transition: all .45s ease;
+
+}
+.btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.btn a {
+  color: #fff;
 }

@@ -1,5 +1,6 @@
 <?php
   include('koneksi.php'); //agar index terhubung dengan database, maka koneksi sebagai penghubung harus di include
+
 ?>
 
 <!DOCTYPE html>
@@ -50,12 +51,22 @@
           font-size: 12px;
           border-radius: 5px;
     }
+    .form {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
     </style>
   </head>
   <body>
     <center><h1>Data Produk</h1><center>
     <center><a href="tambah_produk.php">+ &nbsp; Tambah Produk</a><center>
+    <form class="form" action="" method="POST">
+          <input class="keyword" type="search" placeholder="Search" aria-label="Search" name="keyword" autocomplete="off" autofocus>
+          <button class="caru" type="submit" name="tombol-cari">Search</button>
+    </form>
     <br/>
+    <div class="container">
     <table>
       <thead>
         <tr>
@@ -100,6 +111,8 @@
       }
       ?>
     </tbody>
-    </table>
+  </table>
+</div>
+<script src="script.js"></script>
   </body>
 </html>

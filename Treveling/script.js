@@ -1,24 +1,21 @@
-let slideIndex = 0;
+const btn = document.querySelector('.btn');
+const keyowrd = document.querySelector('.form-control');
+const container = document.querySelector('.container');
 
-function showSlides(index) {
-    let slides = document.getElementsByClassName("card-fitur");
-    if (index >= slides.length) {
-        slideIndex = 0;
-    }
-    if (index < 0) {
-        slideIndex = slides.length - 1;
-    }
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex].style.display = "block";
-}
+// event ketika kita menuliskan keyword
+keyowrd.addEventListener('keyup', function() {
+// ajax
+// xmlhttprequest
+const xhr = new XMLHttpRequest();
 
-function changeSlide(n) {
-    showSlides(slideIndex += n);
-}
+xhr.onreadystatechange = function() {
+    if(xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText);
+    }
+};
 
-// Inisialisasi slide pertama kali
-showSlides(slideIndex);
+xhr.open('get', 'ajax/ajax_cari.php?keyword=' + keyowrd.value);
+    xhr.send();
+});
 
 

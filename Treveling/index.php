@@ -46,11 +46,10 @@
           <li class="nav-item mx-2">
             <a class="nav-link" href="#Layanan">Layanan</a>
           </li>
-        <!-- tambah li dan kondisi jika dia admin maka dia ditampilkan dan jika dia user maka akan di hide -->
         </ul>
         <form class=" form d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary" type="submit">Search</button>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
+          <button class="btn btn-outline-primary" type="submit" name="cari">Search</button>
         </form>
         <div class="btn my-2">
             <a href="login.php" id=""><i data-feather="user"></i></a>
@@ -149,16 +148,6 @@
                 <h2>Siap Melayani 24 jam</h2>
                 <p>Custumor service kami siap melayani anda dengan ramah</p>
            </div>
-            <div data-aos="fade-up">
-            <i data-feather="users"></i>
-                <h2>Members</h2>
-                <p>Berlangganan lah dengan kami</p>
-           </div>
-            <div data-aos="fade-up">
-            <i class='bx bxs-plane-alt'></i>
-                <h2>Destination Yang menarik</h2>
-                <p>Banyak sekali destinasi yang menarik <br>cocok untuk destinasi liburan anda</p>
-           </div>
          </div> 
        </div>
        </div>  
@@ -176,6 +165,6 @@
     <script>
   AOS.init();
 </script>
-<script></script>
+<script src="script.js"></script>
   </body>
 </html>

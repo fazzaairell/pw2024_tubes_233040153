@@ -1,5 +1,9 @@
 <?php
   include('koneksi.php'); //agar index terhubung dengan database, maka koneksi sebagai penghubung harus di include
+  require 'koneksi.php';
+  if (isset($_POST['cari'])) {
+    $query = cari($_POST['keyword']);
+  }
 
 ?>
 
